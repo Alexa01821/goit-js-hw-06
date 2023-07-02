@@ -6,7 +6,7 @@ console.log(nameUserRef);
 nameInputRef.addEventListener('input', onWriteName)
 
 function onWriteName(){
-    if(nameInputRef.value === ''){
+    if(nameInputRef.value === '' ||nameInputRef.value === ' ' ){
         return nameUserRef.textContent = 'Anonymous'; 
     }
    return nameUserRef.textContent = nameInputRef.value;

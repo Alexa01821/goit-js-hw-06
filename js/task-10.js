@@ -42,7 +42,8 @@ function onBtnCreateClick() {
     inputNumberRef.value <= minNumber ||
     inputNumberRef.value >= maxNumber
   ) {
-    alert(`${inputNumberRef.value} — не підходить. Введіть число в діапазоні від${minNumber} до ${maxNumber}.`);
+    alert(`${inputNumberRef.value} — не підходить. Введіть число в діапазоні від ${minNumber} до ${maxNumber}.`);
+    inputNumberRef.value = "0";
   } else {
     createBoxes(inputNumberRef.value);
     inputNumberRef.value = "0";
