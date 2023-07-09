@@ -14,20 +14,19 @@ const images = [
 ];
 
 const listGallery = document.querySelector(".gallery");
-console.log(listGallery);
 
-const createImageArray = images.map(({ url, alt }) => {
-  const createImageItem = document.createElement("li");
-  createImageItem.classList.add("item");
-  const createImage = document.createElement("img");
-  createImage.classList.add("image");
-  createImage.setAttribute("src", `${url}`);
-  createImage.setAttribute("alt", `${alt}`);
-  createImageItem.append(createImage);
-  return createImageItem;
-});
+// const createImageArray = images.map(({ url, alt }) => {
+//   const createImageItem = document.createElement("li");
+//   createImageItem.classList.add("item");
+//   const createImage = document.createElement("img");
+//   createImage.classList.add("image");
+//   createImage.setAttribute("src", `${url}`);
+//   createImage.setAttribute("alt", `${alt}`);
+//   createImageItem.append(createImage);
+//   return createImageItem;
+// });
 
-listGallery.append(...createImageArray);
+// listGallery.append(...createImageArray);
 
 // const imageRef = images[1];
 // const createImageItem = document.createElement('li');
@@ -38,3 +37,10 @@ listGallery.append(...createImageArray);
 // createImage.setAttribute('alt', `${imageRef.alt}`);
 // createImageItem.append(createImage);
 // console.log(createImageItem);
+
+const createImageArray = images.map(image => {
+  const createImageItem = `
+  <li><img class="image" src = "${image.url}" alt = "${image.alt}"></li>`
+  return createImageItem;
+});
+listGallery.insertAdjacentHTML('beforebegin', createImageArray.join(' '));
